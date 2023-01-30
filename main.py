@@ -11,7 +11,7 @@ from torch import optim
 
 import gifploter
 from dataset import dataset, dataloader
-from trainer.estnML_trainer import estnML_trainer
+from trainer.estn_trainer import estn_trainer
 from generator.samplegenerater import SampleIndexGenerater
 
 
