@@ -1,5 +1,4 @@
-# ESTN
-Entropy Transformer Networks: A Learning Approach via Tangent Bundle Data Manifold
+# Entropy Transformer Networks: A Learning Approach via Tangent Bundle Data Manifold (ESTN)
 
 (The pretrained weights will be uploaded soon.)
 
