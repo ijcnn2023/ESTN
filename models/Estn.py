@@ -109,7 +109,7 @@ class EstnML(nn.Module):
         
         # Decoder (not sharing params with Encoder)
         for i in range(len(self.Structure["layer"])-1, 0, -1):  # 10 -> 1
-            if self.Structure["inv_Dec"] == 0:
+            if self.Structure["estn_Dec"] == 0:
                 
                 self.network.append(
                     nn.Linear(self.Structure["layer"][i], self.Structure["layer"][i-1], bias=False)
@@ -127,7 +127,7 @@ class EstnML(nn.Module):
                         self.network.append(nn.LeakyReLU(self.args['ReluType']["Dec_alpha"]))
                     elif self.args['ReluType']["type"] == "InvLeaky":
                         self.network.append(
-                            InvLeakyReLU(self.args['ReluType']["Enc_alpha"], inplace=False, invertible=self.inv_leaky) # add inv
+                            InvLeakyReLU(self.args['ReluType']["Enc_alpha"], inplace=False, invertible=self.inv_leaky) # add estn
                         )
                     else:
                         raise NotImplementedError
@@ -140,7 +140,7 @@ class EstnML(nn.Module):
                         self.network.append(nn.LeakyReLU(self.args['ReluType']["Dec_alpha"]))
                     elif self.args['ReluType']["type"] == "InvLeaky":
                         self.network.append(
-                            InvLeakyReLU(self.args['ReluType']["Enc_alpha"], inplace=False, invertible=self.inv_leaky) # add inv
+                            InvLeakyReLU(self.args['ReluType']["Enc_alpha"], inplace=False, invertible=self.inv_leaky) # add estn
                         )
                     else:
                         raise NotImplementedError
