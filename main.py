@@ -127,7 +127,7 @@ def SetParam(mode='encoder'):
             relu = [1, 1, 1, 1, 0],
             Enc_require_gard = [1, 1, 1, 1, 1],
             Dec_require_gard = [0, 0, 0, 0, 0],
-            inv_Enc = 0, inv_Dec = 1,
+            estn_Enc = 0, estn_Dec = 1,
         ),
         # Extra Head (DR project)
         ExtraHead = dict(
@@ -195,7 +195,7 @@ def SetParam(mode='encoder'):
     parser.add_argument("-Task", "--Task",
                         default="train", choices=['train', "interplotation"])  
     # new params
-    parser.add_argument("-Name", "--ExpName", default="Inv", type=str)
+    parser.add_argument("-Name", "--ExpName", default="ESTN", type=str)
     parser.add_argument("-R", "--ratio",
                         default={"AE": 0.005,
                                 "dist": 1,
@@ -204,7 +204,7 @@ def SetParam(mode='encoder'):
                                 "orth": 0,
                                 "pad": 0,
                             },
-                        type=dict, help='the weight for each loss item for inv-ML or MLAE')
+                        type=dict, help='the weight for each loss item for estn or MLAE')
     parser.add_argument("-Mode", "--InverseMode",
                         default={
                                 "mode": "pinverse",  # ["pinverse", "CSinverse", "ZeroPadding"],
@@ -247,13 +247,13 @@ def SetParam(mode='encoder'):
 
 
 def SetModel(param):
-    from models.InvML import InvML_MLP
-    from loss.InvML_loss import InvMLLosses
+    from models.estn import Estn_MLP
+    from loss.Estn_loss import EstnLosses
     
     if param['Model'] == 'MLP':
-        Model = InvML_MLP(param).to(device)
+        Model = Estn_MLP(param).to(device)
         param['index'] = Model.plot_index_list  # network index
-        loss = InvMLLosses(args=param, cuda=device)
+        loss = ESTNLosses(args=param, cuda=device)
 
     return Model, loss
 
@@ -325,7 +325,7 @@ def single_test(new_param=dict(), mode='encoder', device='cuda'):
         if param['EPOCHS'] <= 0:
             break
         # start a trainer
-        loss_sum = invML_trainer(Model, loss_caler, epoch, train_data, train_label,
+        loss_sum = estn_trainer(Model, loss_caler, epoch, train_data, train_label,
                                 optimizer, device,
                                 sample_index_generater_train,
                                 batch_size=param['BATCHSIZE'],
