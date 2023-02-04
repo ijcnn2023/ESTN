@@ -35,7 +35,7 @@ def base_params(mode):
                 relu             = [    1,    1,    1,    1,      1,    1,    1,    0],
                 Enc_require_gard = [    1,    1,    1,    1,      1,    1,    1,    1],
                 Dec_require_gard = [    0,    0,    0,    0,      0,    0,    0,    0],
-                inv_Enc=0, inv_Dec=1,
+                estn_Enc=0, estn_Dec=1,
             ),
             # Extra Head (DR project)
             ExtraHead = dict(
@@ -99,7 +99,7 @@ def base_params(mode):
                 relu             = [    1,    1,    1,    1,      1,    1,    1,    0],
                 Enc_require_gard = [    1,    1,    1,    1,      1,    1,    1,    1],
                 Dec_require_gard = [    0,    0,    0,    0,      0,    0,    0,    0],
-                inv_Enc=0, inv_Dec=1,
+                estn_Enc=0, estn_Dec=1,
             ),
             # Extra Head (DR project)
             ExtraHead = dict(
@@ -171,7 +171,7 @@ def test_1(mode):
                 relu             = [    0,    1,    1,    1,      1,    1,    1,    0],
                 Enc_require_gard = [    1,    1,    1,    1,      1,    1,    1,    1],
                 Dec_require_gard = [    0,    0,    0,    0,      0,    0,    0,    0],
-                inv_Enc=0, inv_Dec=1,
+                estn_Enc=0, estn_Dec=1,
             ),
             # Extra Head (DR project)
             ExtraHead = dict(
@@ -230,7 +230,7 @@ def test_1(mode):
                 relu             = [    0,    1,    1,    1,      1,    1,    1,    0],
                 Enc_require_gard = [    0,    0,    0,    0,      0,    0,    0,    0],
                 Dec_require_gard = [    1,    0,    0,    0,      0,    0,    0,    0],
-                inv_Enc=0, inv_Dec=1,
+                estn_Enc=0, estn_Dec=1,
             ),
             # AE layer
             AEWeight = dict(
@@ -298,7 +298,7 @@ def test_2(mode):
                 relu             = [    1,    1,    1,    1,      1,    1,    1,    0],
                 Enc_require_gard = [    1,    1,    1,    1,      1,    1,    1,    1],
                 Dec_require_gard = [    0,    0,    0,    0,      0,    0,    0,    0],
-                inv_Enc=0, inv_Dec=1,
+                estn_Enc=0, estn_Dec=1,
             ),
             # Extra Head (DR project)
             ExtraHead = dict(
@@ -361,7 +361,7 @@ def test_2(mode):
                 relu             = [    1,    1,    1,    1,      1,    1,    1,    0],
                 Enc_require_gard = [    0,    0,    0,    0,      0,    0,    0,    0],
                 Dec_require_gard = [    1,    0,    0,    0,      0,    0,    0,    0],
-                inv_Enc=0, inv_Dec=1,
+                estn_Enc=0, estn_Dec=1,
             ),
             # AE layer
             AEWeight = dict(
@@ -426,7 +426,7 @@ def test_5(mode):
                 relu             = [    0,    1,    1,    1,      1,    1,    1,    0],
                 Enc_require_gard = [    1,    1,    1,    1,      1,    1,    1,    1],
                 Dec_require_gard = [    0,    0,    0,    0,      0,    0,    0,    0],
-                inv_Enc=0, inv_Dec=1,
+                estn_Enc=0, estn_Dec=1,
             ),
             # Extra Head (DR project)
             ExtraHead = dict(
@@ -483,7 +483,7 @@ def test_5(mode):
                 relu             = [    0,    1,    1,    1,      1,    1,    1,    0],
                 Enc_require_gard = [    0,    0,    0,    0,      0,    0,    0,    0],
                 Dec_require_gard = [    1,    0,    0,    0,      0,    0,    0,    0],
-                inv_Enc=0, inv_Dec=1,
+                estn_Enc=0, estn_Dec=1,
             ),
             # AE layer
             AEWeight = dict(
@@ -548,7 +548,7 @@ def test_8(mode):
                 relu             = [    0,    1,    1,    1,      1,    1,    1,    0],
                 Enc_require_gard = [    1,    1,    1,    1,      1,    1,    1,    1],
                 Dec_require_gard = [    0,    0,    0,    0,      0,    0,    0,    0],
-                inv_Enc=0, inv_Dec=1,
+                estn_Enc=0, estn_Dec=1,
             ),
             # Extra Head (DR project)
             ExtraHead = dict(
@@ -607,7 +607,7 @@ def test_8(mode):
                 relu             = [    0,    1,    1,    1,      1,    1,    1,    0],
                 Enc_require_gard = [    0,    0,    0,    0,      0,    0,    0,    0],
                 Dec_require_gard = [    1,    0,    0,    0,      0,    0,    0,    0],
-                inv_Enc=0, inv_Dec=1,
+                estn_Enc=0, estn_Dec=1,
             ),
             # AE layer
             AEWeight = dict(
